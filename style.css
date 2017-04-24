@@ -104,8 +104,10 @@ body {
 }
 
 .input--pref {
-   background: transparent;
-   -webkit-appearance: none;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+    background: transparent;
     padding: 14px 15px 20px;
     font-size: 16px;
     display: inline-block;
@@ -113,13 +115,18 @@ body {
     outline: none;
     box-shadow: none;
     border: none;
+    border-radius: 0;
     border-bottom: 2px solid #d0d0d7;
     transition: all .3s ease;
+    background: url(images/triangle_arrow.png) no-repeat 80% white;
 }
 .input--pref:active {
     border: none;
     border-bottom: 2px solid #531fc0;
     outline: none;
+}
+.input--pref option {
+    box-shadow: none;
 }
 
 
