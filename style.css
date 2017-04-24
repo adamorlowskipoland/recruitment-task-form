@@ -46,12 +46,8 @@ body {
 .box--part {
     display: inline-block;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 .img {
-    padding: 0;
-    margin: 0;
     height: 100%;
     width: 100%;
 }
@@ -60,15 +56,13 @@ body {
 .box__left {
     width: 308px;
     height: 100%;
-    /*background: url(images/bg_left_box.jpg);
-    background-size: cover;*/
 }
 .box__content {
     width: 470px;
     height: 100%;
     background: white;
-    border: 1px solid white;
     margin-left: -4px;
+    position: relative;
 }
 .box__tabs {
     width: 75px;
@@ -77,14 +71,67 @@ body {
     border: 1px solid white;    
 }
 
+.btn {
+    width: 237px;
+    height: 50px;
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    position: absolute;
+    top: calc(100% - 25px);
+    right: -50px;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.btn--name {
+    width: 187px;
+    height: 50px;
+    padding: 13px;
+    float: left;
+    text-transform: uppercase;
+    background: #8658eb;
+    background: -webkit-linear-gradient(left, #8658eb, #6931e4);
+    background: -o-linear-gradient(left, #8658eb, #6931e4);
+    background: -moz-linear-gradient(to right, #8658eb, #6931e4);
+    background: linear-gradient(left, #8658eb, #6931e4);
+}
+
+.btn--arrow {
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+    float: right;
+    background: #7841f4;
+}
+
+
+
+
+
+
+/*          mobile      */
+/* ####################### */
+/* ####################### */
+
+
 @media(max-width: 900px) {
     .box__left, .box__tabs {
         display: none;
     }
     .box__content {
+    width: 290px;
+    height: 512px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    }
+    .btn {
+        right: 28px;
+        /*right: calc(50% + 15px);*/
+        /*transform: translate()*/
     }
 }
