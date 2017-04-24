@@ -72,10 +72,16 @@ body {
 }
 .content--header {
     padding: 0 15px;
+    margin: 0;
+    margin-bottom: 26px;
+}
+
+.form {
+    
 }
 
 .label {
-    padding: 15px 15px 0;
+    padding: 25px 15px 0;
     font-size: 11px;
     color: #d0d0d7;
     display: block;
@@ -90,14 +96,47 @@ body {
     border-bottom: 2px solid #d0d0d7;
     transition: all .3s ease;
 }
+
 .input:focus {
     border: none;
     border-bottom: 2px solid #531fc0;
     outline: none;
 }
 
-.form {
-    
+.input--pref {
+   background: transparent;
+   -webkit-appearance: none;
+    padding: 14px 15px 20px;
+    font-size: 16px;
+    display: inline-block;
+    width: 114px;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid #d0d0d7;
+    transition: all .3s ease;
+}
+.input--pref:active {
+    border: none;
+    border-bottom: 2px solid #531fc0;
+    outline: none;
+}
+
+
+.input--mobile {
+    padding: 14px 15px 20px;
+    font-size: 16px;
+    display: inline-block;
+    box-shadow: none;
+    border: none;
+    width: 241px;
+    border-bottom: 2px solid #d0d0d7;
+    transition: all .3s ease;
+}
+.input--mobile:focus {
+    border: none;
+    border-bottom: 2px solid #531fc0;
+    outline: none;
 }
 
 .box__tabs {
