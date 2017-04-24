@@ -24,6 +24,9 @@ body {
 .wrapper {
     padding: 0;
     margin: 0;
+    opacity: 0;
+    transition: all .5s ease;
+    color: #454545;
 }
 
 .header {
@@ -36,7 +39,6 @@ body {
 .box {
     width: 860px;
     height: 552px;
-    /*border: 1px solid white;*/
     margin: 0 auto;
     position: absolute;
     top: 50%;
@@ -62,8 +64,42 @@ body {
     height: 100%;
     background: white;
     margin-left: -4px;
+    padding: 50px;
+    font-size: 16px;
+    font-weight: 400;
     position: relative;
+    vertical-align: top;
 }
+.content--header {
+    padding: 0 15px;
+}
+
+.label {
+    padding: 15px 15px 0;
+    font-size: 11px;
+    color: #d0d0d7;
+    display: block;
+}
+.input {
+    padding: 14px 15px 20px;
+    font-size: 16px;
+    display: block;
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    border-bottom: 2px solid #d0d0d7;
+    transition: all .3s ease;
+}
+.input:focus {
+    border: none;
+    border-bottom: 2px solid #531fc0;
+    outline: none;
+}
+
+.form {
+    
+}
+
 .box__tabs {
     width: 75px;
     height: 100%;
@@ -107,7 +143,9 @@ body {
     background: #7841f4;
 }
 
-
+.fadeIn {
+    opacity: 1;
+}
 
 
 
