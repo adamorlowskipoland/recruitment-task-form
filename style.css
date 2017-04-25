@@ -11,7 +11,7 @@ body {
     padding: 0;
 }
 
-.container {
+.cont {
     margin: 0 auto;
     max-width: 1366px;
     /*max-height: 800px;*/
@@ -21,7 +21,7 @@ body {
     position: relative;
 }
 
-.wrapper {
+.wrapp {
     padding: 0;
     margin: 0;
     opacity: 0;
@@ -146,6 +146,55 @@ body {
     outline: none;
 }
 
+.radio__group {
+    padding: 14px 0 20px;
+    font-size: 24px;
+    color: #353535;
+    display: block;
+    width: 100%;
+    transition: all .3s ease;
+}
+.input--radio {
+    /*Firefox*/
+    /*-moz-appearance:none;   */
+    /*Safari and Chrome*/
+    /*-webkit-appearance:none;   */
+    /*appearance:none;*/
+    /*display: none;*/
+    /*visibility: none;*/
+}
+
+.label--radio {
+    position: relative;
+}
+
+.input--radio::before,
+.input--radio::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.text--radio:hover {
+    cursor: pointer;
+}
+
+.text--radio::before {
+    
+}
+
+.text--radio::after {
+
+}
+
+input[type="radio"]:checked + label span.text--radio {
+    border: 2px solid #1cd4a3;
+
+}
+
+
 .box__tabs {
     width: 75px;
     height: 100%;
@@ -209,6 +258,7 @@ body {
     width: 290px;
     height: 512px;
     position: absolute;
+    padding: 15px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -217,5 +267,8 @@ body {
         right: 28px;
         /*right: calc(50% + 15px);*/
         /*transform: translate()*/
+    }
+    .input--mobile {
+        width: 131px;
     }
 }
