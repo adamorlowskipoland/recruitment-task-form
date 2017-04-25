@@ -108,6 +108,7 @@ body {
     border: none;
     border-bottom: 2px solid #531fc0;
     outline: none;
+    background: white;
 }
 
 .input--pref {
@@ -270,6 +271,7 @@ input::-webkit-inner-spin-button {
     margin: 0;
     font-size: 16px;
     border: 2px solid #d0d0d7;
+    transition: all .3s ease;
     font-weight: 400;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -285,11 +287,11 @@ input::-webkit-inner-spin-button {
     width: 50px;
 }
 
-.input__data--mounth, .input__data--year {
+.input__data--month, .input__data--year {
     width: 130px;
 }
 
-.date--group .input__data--mounth {
+.date--group .input__data--month {
     vertical-align: top;
     margin: 0 22px;
 }
@@ -311,6 +313,9 @@ input::-webkit-inner-spin-button {
     left: 216px;
 }
 
+.date--hide {
+    display: none;
+}
 
 
 
@@ -415,7 +420,7 @@ input::-webkit-inner-spin-button {
     .input--mobile {
         width: 141px;
     }
-    .input__data--mounth {
+    .input__data--month {
         width: 50px;
     }
     .input__data--year {
@@ -424,4 +429,41 @@ input::-webkit-inner-spin-button {
     .date--group::after {
     left: 136px;
     }
+}
+
+
+
+
+
+
+
+/* ################################ */
+/* ################################ */
+/* ################################ */
+/* ############ helpers ########### */
+
+/* hiding input type number arrows */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+/* ############################## */
+
+
+
+/* turning off chrome autofill yello bg */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+/* ############################## */
+
+
+
+
+.error {
+    background: white;
+    border: 1ps solid red;
 }

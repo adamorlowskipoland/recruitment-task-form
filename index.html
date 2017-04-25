@@ -27,11 +27,11 @@
 
                         <label for="phoneNumber" class="label">Mobile</label>
 
-                        <select class="input--pref">
+                        <select class="input input--pref">
                             <option value="+48 (PL)">+48 (PL)</option>
                             <option value="+49 (DE)">+49 (DE)</option>
                         </select>
-                        <input type="number" class="input--mobile" required name="phone-number" id="phoneNumber">
+                        <input type="number" class="input input--mobile" required name="phone-number" id="phoneNumber">
 
 
                         <label for="radioMale" class="label">Gender</label>
@@ -61,8 +61,9 @@
                         
                         <label for="dateDay" class="label">Date of Birth</label>
                         <label for="" class="date--group">
+                            <input type="date" value="" class="date--hide">
                             <input type="number" min="01" max="31" value="" class="input__data--day" name="date-day" id="dateDay" placeholder="01" required>
-                            <input type="text" class="input__data--mounth" name="date-mouth" id="dateMounth" placeholder="January" required>
+                            <input type="text" class="input__data--month" name="date-moth" id="dateMonth" placeholder="January" required>
                             <input type="number" value="" class="input__data--year" name="date-year" id="dateYear" placeholder="1990" required>
                         </label>
 
