@@ -81,13 +81,13 @@ body {
 }
 
 .label {
-    padding: 25px 15px 0;
+    padding: 20px 15px 0;
     font-size: 11px;
     color: #d0d0d7;
     display: block;
 }
 .input {
-    padding: 14px 15px 20px;
+    padding: 10px 15px 12px;
     font-size: 16px;
     display: block;
     box-shadow: none;
@@ -108,7 +108,7 @@ body {
     -webkit-appearance:none; /* Safari and Chrome */
     appearance:none;
     background: transparent;
-    padding: 14px 15px 20px;
+    padding: 10px 15px 12px;
     font-size: 16px;
     display: inline-block;
     width: 114px;
@@ -131,7 +131,7 @@ body {
 
 
 .input--mobile {
-    padding: 14px 15px 20px;
+    padding: 10px 15px 12px;
     font-size: 16px;
     display: inline-block;
     box-shadow: none;
@@ -147,7 +147,7 @@ body {
 }
 
 .radio__group {
-    padding: 14px 0 20px;
+    padding: 14px 0 0;
     font-size: 24px;
     color: #353535;
     display: block;
@@ -156,42 +156,39 @@ body {
 }
 .input--radio {
     /*Firefox*/
-    /*-moz-appearance:none;   */
+    -moz-appearance:none;
     /*Safari and Chrome*/
-    /*-webkit-appearance:none;   */
-    /*appearance:none;*/
-    /*display: none;*/
+    -webkit-appearance:none;
+    appearance:none;
+    display: none;
     /*visibility: none;*/
 }
 
-.label--radio {
+/*.label--radio {
+    position: relative;
+}*/
+
+.text--radio {
+    display: inline;
+    position: relative;
+    margin-right: 30px;
     position: relative;
 }
 
-.input--radio::before,
-.input--radio::after {
-    content: " ";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+.text--radio i {
+    width: 45px;
+    height: 50px;
+    border: 2px solid #d0d0d7;
+    padding: 10px;
+    margin: 0;
 }
 
 .text--radio:hover {
     cursor: pointer;
 }
 
-.text--radio::before {
-    
-}
-
-.text--radio::after {
-
-}
-
-input[type="radio"]:checked + label span.text--radio {
+input[type="radio"]:checked + label .text--radio i {
     border: 2px solid #1cd4a3;
-
 }
 
 
