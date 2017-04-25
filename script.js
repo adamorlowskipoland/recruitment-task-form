@@ -1,5 +1,9 @@
 const model = {
+    "form" : document.getElementById('form'),
+
     "dateMounth" : document.getElementById('dateMounth'),
+
+    "submitBtn" : document.getElementById('btn'),
 }
 
 const operator = {
@@ -8,9 +12,13 @@ const operator = {
         model.dateMounth.setAttribute('placeholder', placeholder);
     },
     "eventListeners" : function() {
-        var windowWidth  = window.innerWidth;
         window.addEventListener('resize', function() {
             operator.checkWindowWidth();
+        });
+        model.form.addEventListener('submit', function(elem) {
+            elem.preventDefault();
+            console.log(this);
+            // model.form.submit();
         });
     }
 }
