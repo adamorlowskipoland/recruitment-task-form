@@ -96,6 +96,7 @@ body {
 .input {
     padding: 10px 15px 12px;
     font-size: 16px;
+    font-weight: 400;
     display: block;
     box-shadow: none;
     border: none;

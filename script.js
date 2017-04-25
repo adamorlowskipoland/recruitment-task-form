@@ -1,8 +1,8 @@
 const model = {
     "form" : document.getElementById('form'),
     "fullName" : document.getElementById('fullName'),
+    "phoneNumber" : document.getElementById('phoneNumber'),
 
-    
     "dateMonth" : document.getElementById('dateMonth'),
 
     "submitBtn" : document.getElementById('btn'),
@@ -14,8 +14,17 @@ const model = {
 
 const operator = {
     "checkWindowWidth" : function() {
-        var placeholder = window.innerWidth > 900 ? 'January' : '01';
-        model.dateMonth.setAttribute('placeholder', placeholder);
+        if (window.innerWidth > 900) {
+            model.dateMonth.setAttribute('placeholder', 'January');
+            model.dateMonth.setAttribute('type', 'text');
+        } else {
+            model.dateMonth.setAttribute('placeholder', '01');
+            model.dateMonth.setAttribute('type', 'number');
+        }
+
+        // var placeholder = window.innerWidth > 900 ? 'January' : '01';
+        // var type = 
+        // model.dateMonth.setAttribute('placeholder', placeholder);
     },
     "checkName" : function() {
         var firstLastName = model.fullName.value.split(" ");
@@ -29,7 +38,7 @@ const operator = {
         }
     },
     "checkMobile" : function() {
-
+        console.log(model.phoneNumber.value);
     },
     "checkDate" : function() {
 
