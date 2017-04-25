@@ -1,7 +1,9 @@
 * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    /*margin: 0;
-    padding: 0;*/
+    margin: 0;
+    padding: 0;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
@@ -152,7 +154,7 @@ body {
     color: #353535;
     display: block;
     width: 100%;
-    transition: all .3s ease;
+    transition: all .5s ease;
 }
 .input--radio {
     /*Firefox*/
@@ -164,15 +166,17 @@ body {
     /*visibility: none;*/
 }
 
-/*.label--radio {
-    position: relative;
-}*/
-
 .text--radio {
     display: inline;
-    position: relative;
+    margin: 0;
+    padding: 0;
     margin-right: 30px;
+    /*margin-left: -13px;*/
     position: relative;
+}
+
+.text--radio:hover {
+    cursor: pointer;
 }
 
 .text--radio i {
@@ -181,15 +185,60 @@ body {
     border: 2px solid #d0d0d7;
     padding: 10px;
     margin: 0;
+    transition: all .5s ease;
 }
 
-.text--radio:hover {
-    cursor: pointer;
+.text--radio--venus i {
+    padding: 10px 10px 10px 12px;
+}
+
+.square--radio {
+    position: absolute;
+    top: 11px;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #d0d0d7;
+    background: white;
+    color: #1cd4a3;
+    transition: all .5s ease;
+}
+
+@-moz-document url-prefix(images/square_radio_bg.png) { 
+  .square--radio {
+    margin: 0;
+    border:1px solid red;
+    position:absolute;
+    right:0;
+    top:0;
+  }
+}
+
+.square--radio--venus {
+    right: 0;
+}
+
+.forSquareRadio {
+    position: relative;
+}
+.square--radio--mars {
+    right: -6px;
 }
 
 input[type="radio"]:checked + label .text--radio i {
     border: 2px solid #1cd4a3;
 }
+input[type="radio"]:checked + label .text--radio i + .forSquareRadio .square--radio {
+    border: 2px solid #1cd4a3;
+    background: url(images/square_radio_bg.png);
+    transition: all .3s ease;
+}
+
+
+
+.input__data--day, .input__data--mounth .input__data--year 
+
+
 
 
 .box__tabs {
@@ -217,7 +266,8 @@ input[type="radio"]:checked + label .text--radio i {
 .btn--name {
     width: 187px;
     height: 50px;
-    padding: 13px;
+    padding: 13px 0;
+    /*display: inline;*/
     float: left;
     text-transform: uppercase;
     background: #8658eb;
@@ -230,9 +280,14 @@ input[type="radio"]:checked + label .text--radio i {
 .btn--arrow {
     width: 50px;
     height: 50px;
-    padding: 13px;
+    padding: 13px 0;
     float: right;
+    /*display: inline;*/
     background: #7841f4;
+    vertical-align: top;
+}
+.btn--clear {
+    clear: both;
 }
 
 .fadeIn {
@@ -248,6 +303,10 @@ input[type="radio"]:checked + label .text--radio i {
 
 
 @media(max-width: 900px) {
+    .cont {
+        max-height: 800px;  
+        overflow: hidden;      
+    }
     .box__left, .box__tabs {
         display: none;
     }

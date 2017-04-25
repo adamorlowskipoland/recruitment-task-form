@@ -21,44 +21,55 @@
                 <div class="box--part box__content">
                     <p class="content--header">Take it all with you. Switch between devices, and pick up.</p>
 
-                    <form action="" class="form">
-                        <label for="" class="label">Your name</label>
-                        <input type="text" class="input" autofocus required>
+                    <form action="" method="post" class="form">
+                        <label for="fullName" class="label">Your name</label>
+                        <input type="text" class="input" id="fullName" name="name" autofocus required>
 
-                        <label for="" class="label">Mobile</label>
+                        <label for="phoneNumber" class="label">Mobile</label>
 
                         <select class="input--pref">
                             <option value="+48 (PL)">+48 (PL)</option>
                             <option value="+49 (DE)">+49 (DE)</option>
                         </select>
-                        <input type="text" class="input--mobile" required>
+                        <input type="text" class="input--mobile" required name="phone-number" id="phoneNumber">
 
 
-                        <label for="" class="label">Gender</label>
+                        <label for="radioMale" class="label">Gender</label>
 
                         <div class="radio__group">
 
                             <input type="radio" name="gender" value="female" class="input--radio" id="radioFemale">
                             <label for="radioFemale" class="label--radio">
-                                <p class="text--radio">
+                                <p class="text--radio text--radio--venus">
                                     <i class="fa fa-venus text--radio" aria-hidden="true"></i>
+                                    <span class="forSquareRadio">
+                                        <span class="square--radio square--radio--venus"></span>
+                                    </span>
                                 </p>
                             </label>
 
                             <input type="radio" name="gender" value="male" checked class="input--radio" id="radioMale">
                             <label for="radioMale" class="label--radio">
-                                <p class="text--radio">
+                                <p class="text--radio text--radio--mars">
                                     <i class="fa fa-mars text--radio" aria-hidden="true"></i>
+                                    <span class="forSquareRadio">
+                                        <span class="square--radio square--radio--mars"></span>                                        
+                                    </span>
                                 </p>
                             </label>
                         </div>
                         
-                        <label for="" class="label">Date of Birth</label>
-                        <input type="date" class="input" required>
+                        <label for="dateDay" class="label">Date of Birth</label>
+                        <label for="">
+                            <input type="number" class="input__data--day" name="date-day" id="dateDay" required>
+                            <input type="text" class="input__data--mounth" name="date-mouth" id="dateMounth" required>
+                            <input type="number" class="input__data--year" name="date-year" id="dateYear" required>
+                        </label>
 
                         <button class="btn" type="submit">
                             <span class="btn--name">continue</span>
                             <span class="btn--arrow">&rarr;</span>                            
+                            <span class="btn--clear"></span>                            
                         </button>
 
                     </form>
