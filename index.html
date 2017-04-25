@@ -60,10 +60,10 @@
                         </div>
                         
                         <label for="dateDay" class="label">Date of Birth</label>
-                        <label for="">
-                            <input type="number" class="input__data--day" name="date-day" id="dateDay" required>
-                            <input type="text" class="input__data--mounth" name="date-mouth" id="dateMounth" required>
-                            <input type="number" class="input__data--year" name="date-year" id="dateYear" required>
+                        <label for="" class="date--group">
+                            <input type="number" min="01" max="31" value="" class="input__data--day" name="date-day" id="dateDay" placeholder="01" required>
+                            <input type="text" class="input__data--mounth" name="date-mouth" id="dateMounth" placeholder="January" required>
+                            <input type="number" value="" class="input__data--year" name="date-year" id="dateYear" placeholder="1990" required>
                         </label>
 
                         <button class="btn" type="submit">
