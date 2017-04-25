@@ -378,8 +378,14 @@ input::-webkit-inner-spin-button {
 
 @media(max-width: 900px) {
     .cont {
-        max-height: 800px;  
-        overflow: hidden;      
+        max-height: 800px;
+        overflow: hidden;
+    }
+    .header {
+        padding: 30px;
+    }
+    .box {
+        top: 45%;
     }
     .box__left, .box__tabs {
         display: none;
