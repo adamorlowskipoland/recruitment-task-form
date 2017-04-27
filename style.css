@@ -377,6 +377,7 @@ input::-webkit-inner-spin-button {
 
 .fadeIn {
     opacity: 1;
+    transition: all .5s ease;
 }
 
 
