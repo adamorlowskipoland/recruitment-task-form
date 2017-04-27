@@ -123,7 +123,9 @@ const operator = {
             //         console.log('gotowe do submita');
             //         operator.checkDataYear();
 
-        } 
+        } else {
+            this.checkDataYear();
+        }
     },
     "checkDataYear" : function() {
         if (model.dateYear.value.length !== 4) {
