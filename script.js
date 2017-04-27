@@ -53,7 +53,6 @@ const operator = {
         if (key.keyCode >= 48 && key.keyCode <= 57) {
             this.makeStandardBorder(model.phoneNumber);
             var str = model.phoneNumber.value.replace(/\s/g,'');
-            console.log(str.length);
             var str2;
             var chunks = str.split("");
 
@@ -102,7 +101,8 @@ const operator = {
     "checkMobile" : function() {
         var phoneValue = model.phoneNumber.value.replace(/\s/g,'');
         console.log(phoneValue.length);
-        if (phoneValue < 9) {
+
+        if (phoneValue.length !== 9) {
             this.makeRedBorder(model.phoneNumber);
             model.phoneNumber.value = "";
             model.phoneNumber.setAttribute('placeholder', "Wrong mobile number");
