@@ -36,10 +36,10 @@ const operator = {
         // model.dateMonth.setAttribute('placeholder', placeholder);
     },
     "makeRedBorder" : function(elem) {
-        elem.style.borderBottom = "1px solid red";
+        elem.style.borderBottom = "2px solid red";
     },
     "makeStandardBorder" : function(elem) {
-        elem.style.borderBottom = "1px solid #531fc0";
+        elem.style.borderBottom = "2px solid #531fc0";
     },
     "checkName" : function() {
         var firstLastName = model.fullName.value.split(" ");
@@ -90,44 +90,59 @@ const operator = {
             model.phoneNumber.focus();
         } else {
             this.makeStandardBorder(model.phoneNumber);
-            this.checkDate();
+            this.checkDateMonth();
         }
     },
-    "checkDate" : function() {
+    // "checkDataDay" : function() {
+
+    // },
+    "checkDateMonth" : function() {
         if (model.dateMonth.type === "text") {
-            var monthValue = model.dateMonth.value.toLowerCase().slice(0, 3);
-            model.months.forEach(function(month) {
-                if (month.toLowerCase().match(monthValue)) {
-                    operator.makeStandardBorder(model.dateMonth);
-                    model.form.submit();
+            var initValue = model.dateMonth.value.slice(0, 3);
+            var monthValue = initValue.toLowerCase();
+            var index = 0;
+            while (index < model.months.length) {
+                if (monthValue === model.months[index].toLowerCase()) {
+                    model.dateMonth.style = "border: 2px solid #d0d0d7";
+                    this.checkDataYear();
+                    break;
                 } else {
-                    operator.makeRedBorder(model.dateMonth);
+                    model.dateMonth.focus();
+                    this.makeRedBorder(model.dateMonth);
                 }
-            })
-            console.log(monthValue);
-        } else {
-            if (model.dateYear.value.length !== 4) {
-                operator.makeRedBorder(model.dateYear);
-            } else {
-                operator.makeStandardBorder(model.dateYear);
-
-            //  connecting inputs to get a date format
-                // var dateArr = [];
-                // dateArr.push(model.dateYear.value, model.dateMonth.value, model.dateDay.value);
-                // var dateStr = dateArr.join(", ");
-                // var putDate = new Date(dateStr);
-                // console.log(dateStr);
-                // console.log(putDate);
-                // model.date.value = putDate;
-
-                model.form.submit();
+                index++;
             }
+
+
+            //     //  connecting inputs to get a date format
+            //         // var dateArr = [];
+            //         // dateArr.push(model.dateYear.value, (model.months.indexOf(month)+1), model.dateDay.value);
+            //         // var dateStr = dateArr.join(", ");
+            //         // var putDate = new Date(dateStr);
+            //         // model.date.value = putDate;
+            //         console.log('gotowe do submita');
+            //         operator.checkDataYear();
+
+        } 
+    },
+    "checkDataYear" : function() {
+        if (model.dateYear.value.length !== 4) {
+            operator.makeRedBorder(model.dateYear);
+            model.dateYear.focus();
+        } else {
+            operator.makeStandardBorder(model.dateYear);
+
+        //  connecting inputs to get a date format
+            // var dateArr = [];
+            // dateArr.push(model.dateYear.value, model.dateMonth.value, model.dateDay.value);
+            // var dateStr = dateArr.join(", ");
+            // var putDate = new Date(dateStr);
+            // console.log(dateStr);
+            // console.log(putDate);
+            // model.date.value = putDate;
+
+            model.form.submit();
         }
-
-
-
-
-
     },
     "eventListeners" : function() {
         window.addEventListener('resize', function() {
