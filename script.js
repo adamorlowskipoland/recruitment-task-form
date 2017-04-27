@@ -39,9 +39,17 @@ const operator = {
     },
     "checkMobile" : function() {
         console.log(model.phoneNumber.value);
+        if (model.phoneNumber.value < 9) {
+            model.phoneNumber.style.borderBottom = "1px solid red";
+            model.phoneNumber.value = "";
+            model.phoneNumber.setAttribute('placeholder', "Wrong mobile number");
+        } else {
+            model.phoneNumber.style.borderBottom = "1px solid #531fc0";
+            this.checkDate();
+        }
     },
     "checkDate" : function() {
-
+        
     },
     "eventListeners" : function() {
         window.addEventListener('resize', function() {
