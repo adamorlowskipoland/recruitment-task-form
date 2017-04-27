@@ -44,6 +44,7 @@ const operator = {
             this.makeRedBorder(model.fullName);
             model.fullName.value = "";
             model.fullName.setAttribute('placeholder', "Put your first and last name");
+            model.fullName.focus();
         } else {
             this.makeStandardBorder(model.fullName);
             this.checkMobile();
@@ -55,7 +56,6 @@ const operator = {
             var str = model.phoneNumber.value.replace(/\s/g,'');
             var str2;
             var chunks = str.split("");
-
 
             // for (var i = 3; i < str.length; i += 3) {
             //     chunks.splice(i, 0, " ");
@@ -75,44 +75,23 @@ const operator = {
             } else {
                 model.phoneNumber.value = str;                
             }
-        } else {
-            this.makeRedBorder(model.phoneNumber);
         }
-
-
-        // if (str.length > 2) {
-        //     chunks.push(str);
-        //     str
-        // }
-        // var str2 
-        // if (str.length === 3) {
-        //     chunks.push(str);
-        //     str = "";
-        // }
-        // console.log(str, chunks);
-        // console.log(model.phoneNumber.value);
-
-
-        
-        // var partsStr = chunks.join(" ");
-        // model.phoneNumber.value = partsStr;
-        // console.log(model.phoneNumber.value);
     },
     "checkMobile" : function() {
         var phoneValue = model.phoneNumber.value.replace(/\s/g,'');
-        console.log(phoneValue.length);
 
         if (phoneValue.length !== 9) {
             this.makeRedBorder(model.phoneNumber);
             model.phoneNumber.value = "";
             model.phoneNumber.setAttribute('placeholder', "Wrong mobile number");
+            model.phoneNumber.focus();
         } else {
             this.makeStandardBorder(model.phoneNumber);
             this.checkDate();
         }
     },
     "checkDate" : function() {
-
+        console.log("checking date");
     },
     "eventListeners" : function() {
         window.addEventListener('resize', function() {
