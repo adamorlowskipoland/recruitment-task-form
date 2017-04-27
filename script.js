@@ -94,19 +94,39 @@ const operator = {
         }
     },
     "checkDate" : function() {
-        if (model.dateYear.value.length !== 4) {
-            operator.makeRedBorder(model.dateYear);
+        if (model.dateMonth.type === "text") {
+            var monthValue = model.dateMonth.value.toLowerCase().slice(0, 3);
+            model.months.forEach(function(month) {
+                if (month.toLowerCase().match(monthValue)) {
+                    operator.makeStandardBorder(model.dateMonth);
+                    model.form.submit();
+                } else {
+                    operator.makeRedBorder(model.dateMonth);
+                }
+            })
+            console.log(monthValue);
         } else {
-            operator.makeStandardBorder(model.dateYear);
-            model.form.submit();
+            if (model.dateYear.value.length !== 4) {
+                operator.makeRedBorder(model.dateYear);
+            } else {
+                operator.makeStandardBorder(model.dateYear);
+
+            //  connecting inputs to get a date format
+                // var dateArr = [];
+                // dateArr.push(model.dateYear.value, model.dateMonth.value, model.dateDay.value);
+                // var dateStr = dateArr.join(", ");
+                // var putDate = new Date(dateStr);
+                // console.log(dateStr);
+                // console.log(putDate);
+                // model.date.value = putDate;
+
+                model.form.submit();
+            }
         }
 
-    //  connecting inputs to get a date format
-        // var dateArr = [];
-        // dateArr.push(model.dateYear.value, model.dateMonth.value, model.dateDay.value);
-        // var dateStr = dateArr.join(", ");
-        // var putDate = new Date(dateStr);
-        // model.date.value = putDate;
+
+
+
 
     },
     "eventListeners" : function() {
