@@ -4,7 +4,10 @@ const model = {
     "fullName" : document.getElementById('fullName'),
     "phoneNumber" : document.getElementById('phoneNumber'),
 
+    "date" : document.getElementById('date'),
+    "dateDay" : document.getElementById('dateDay'),
     "dateMonth" : document.getElementById('dateMonth'),
+    "dateYear" : document.getElementById('dateYear'),
 
     "submitBtn" : document.getElementById('btn'),
 
@@ -91,7 +94,20 @@ const operator = {
         }
     },
     "checkDate" : function() {
-        console.log("checking date");
+        if (model.dateYear.value.length !== 4) {
+            operator.makeRedBorder(model.dateYear);
+        } else {
+            operator.makeStandardBorder(model.dateYear);
+            model.form.submit();
+        }
+
+    //  connecting inputs to get a date format
+        // var dateArr = [];
+        // dateArr.push(model.dateYear.value, model.dateMonth.value, model.dateDay.value);
+        // var dateStr = dateArr.join(", ");
+        // var putDate = new Date(dateStr);
+        // model.date.value = putDate;
+
     },
     "eventListeners" : function() {
         window.addEventListener('resize', function() {
@@ -100,7 +116,6 @@ const operator = {
         model.form.addEventListener('submit', function(elem) {
             elem.preventDefault();
             operator.checkName();
-            // model.form.submit();
         });
         model.phoneNumber.addEventListener('keyup', function(key) {
             operator.showMobile(key);
