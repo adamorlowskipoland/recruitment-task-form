@@ -4,4 +4,4 @@ This is a recruitment task to code psd into html/css/js according to specificati
 
 Preview:
 
-https://adamorlowskipoland.github.io/recruitment-tast-form/index.html
+https://adamorlowskipoland.github.io/recruitment-task-form/index.html
