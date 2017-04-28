@@ -60,7 +60,7 @@ const operator = {
             var str2;
             var chunks = str.split("");
 
-            // for (var i = 3; i < str.length; i += 3) {
+            // for (var i = 3; i < str.length; i += 4) {
             //     chunks.splice(i, 0, " ");
             // }
             // str2 = chunks.join("");
@@ -83,15 +83,25 @@ const operator = {
     "checkMobile" : function() {
         var phoneValue = model.phoneNumber.value.replace(/\s/g,'');
 
-        if (phoneValue.length !== 9) {
+        if (/^\d+$/.test(phoneValue) && phoneValue.length === 9) {
+            this.makeStandardBorder(model.phoneNumber);
+            this.checkDateMonth();
+        } else {
             this.makeRedBorder(model.phoneNumber);
             model.phoneNumber.value = "";
             model.phoneNumber.setAttribute('placeholder', "Wrong mobile number");
             model.phoneNumber.focus();
-        } else {
-            this.makeStandardBorder(model.phoneNumber);
-            this.checkDateMonth();
         }
+
+        // if (phoneValue.length !== 9) {
+        //     this.makeRedBorder(model.phoneNumber);
+        //     model.phoneNumber.value = "";
+        //     model.phoneNumber.setAttribute('placeholder', "Wrong mobile number");
+        //     model.phoneNumber.focus();
+        // } else {
+        //     this.makeStandardBorder(model.phoneNumber);
+        //     this.checkDateMonth();
+        // }
     },
     // "checkDataDay" : function() {
 
