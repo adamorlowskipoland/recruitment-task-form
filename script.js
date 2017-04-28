@@ -30,10 +30,6 @@ const operator = {
             model.dateMonth.setAttribute('placeholder', '01');
             model.dateMonth.setAttribute('type', 'number');
         }
-
-        // var placeholder = window.innerWidth > 900 ? 'January' : '01';
-        // var type = 
-        // model.dateMonth.setAttribute('placeholder', placeholder);
     },
     "makeRedBorder" : function(elem) {
         elem.style.borderBottom = "2px solid red";
@@ -92,16 +88,6 @@ const operator = {
             model.phoneNumber.setAttribute('placeholder', "Wrong mobile number");
             model.phoneNumber.focus();
         }
-
-        // if (phoneValue.length !== 9) {
-        //     this.makeRedBorder(model.phoneNumber);
-        //     model.phoneNumber.value = "";
-        //     model.phoneNumber.setAttribute('placeholder', "Wrong mobile number");
-        //     model.phoneNumber.focus();
-        // } else {
-        //     this.makeStandardBorder(model.phoneNumber);
-        //     this.checkDateMonth();
-        // }
     },
     // "checkDataDay" : function() {
 
