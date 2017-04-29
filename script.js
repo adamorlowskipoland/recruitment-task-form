@@ -74,6 +74,8 @@ const operator = {
             } else {
                 model.phoneNumber.value = str;                
             }
+        } else {
+            this.checkMobile();
         }
     },
     "checkMobile" : function() {
