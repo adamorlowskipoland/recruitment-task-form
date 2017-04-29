@@ -1,4 +1,4 @@
-# recruitment-tast-form
+# recruitment-task-form
 This is a recruitment task to code psd into html/css/js according to specifications.  
 In Example folder you can find images showing how the finished product should look like.
 
